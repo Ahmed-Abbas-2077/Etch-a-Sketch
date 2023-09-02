@@ -52,8 +52,8 @@ function resizeGrid() {
 
 function askUser() {
   let size = prompt('How many squares per side?'); // ask user for size
-  if (size > 100) {
-    alert('Please enter a number less than 100'); // limit size to 100
+  if (size > 100 || size < 1 || isNaN(size)) {
+    alert('Please enter a number less than 100 and more than 0'); // limit size to 100
     askUser();
   } else {
     createGrid(size);
